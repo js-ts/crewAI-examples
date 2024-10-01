@@ -7,12 +7,18 @@ from stock_analysis.tools.sec_tools import SEC10KTool, SEC10QTool
 
 from crewai_tools import WebsiteSearchTool, ScrapeWebsiteTool, TXTSearchTool
 
+from naptha_sdk.client.naptha import Naptha
+
+naptha = Naptha()
+naptha.init()
+
 @CrewBase
 class StockAnalysisCrew:
     agents_config = 'config/agents.yaml'
     tasks_config = 'config/tasks.yaml'
     
     @agent
+    @naptha.agent("financial_agent", "http://localhost:7001")
     def financial_agent(self) -> Agent:
         return Agent(
             config=self.agents_config['financial_analyst'],
@@ -35,6 +41,7 @@ class StockAnalysisCrew:
     
 
     @agent
+    @naptha.agent("research_analyst_agent", "http://localhost:7001")
     def research_analyst_agent(self) -> Agent:
         return Agent(
             config=self.agents_config['research_analyst'],
@@ -55,6 +62,7 @@ class StockAnalysisCrew:
         )
     
     @agent
+    @naptha.agent("financial_analyst_agent", "http://localhost:7001")
     def financial_analyst_agent(self) -> Agent:
         return Agent(
             config=self.agents_config['financial_analyst'],
@@ -83,6 +91,7 @@ class StockAnalysisCrew:
         )
 
     @agent
+    @naptha.agent("investment_advisor_agent", "http://localhost:7001")
     def investment_advisor_agent(self) -> Agent:
         return Agent(
             config=self.agents_config['investment_advisor'],
@@ -111,3 +120,8 @@ class StockAnalysisCrew:
             process=Process.sequential,
             verbose=2,
         )
+
+naptha.build()
+naptha.publish()
+        
+
