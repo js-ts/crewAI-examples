@@ -1,0 +1,25 @@
+[tool.poetry]
+name = "financial-agent"
+version = "0.1.0"
+description = ""
+authors = ["Richard Blythman <richardblythman@gmail.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = ">=3.10,<3.13"
+crewai = "^0.41.1"
+crewai_tools = ">=0.4.6,<0.5.0"
+pydantic = "*"
+sec_api = "*"
+embedchain = ">=0.1.113,<0.2.0"
+requests = "*"
+html2text = "*"
+python-dotenv = "*"
+
+
+[tool.poetry.dependencies.naptha-sdk]
+git = "https://github.com/NapthaAI/naptha-sdk.git"
+branch = "feat/run-agent-tools"
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
