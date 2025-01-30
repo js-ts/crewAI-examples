@@ -13,7 +13,7 @@ html2text = "^2024.2.26"
 sec-api = "^1.0.22"
 
 [tool.poetry.dependencies.naptha-sdk]
-git = "https://github.com/js-ts/naptha-sdk.git"
+git = "https://github.com/napthaAI/naptha-sdk.git"
 
 
 [tool.poetry.scripts]

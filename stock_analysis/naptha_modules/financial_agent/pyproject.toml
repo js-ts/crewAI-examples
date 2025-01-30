@@ -22,5 +22,5 @@ html2text = "*"
 python-dotenv = "*"
 
 [tool.poetry.dependencies.naptha-sdk]
-git = "https://github.com/js-ts/naptha-sdk.git"
+git = "https://github.com/napthaAI/naptha-sdk.git"
 branch = "main"
