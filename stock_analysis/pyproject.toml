@@ -7,18 +7,18 @@ readme = "README.md"
 
 [tool.poetry.dependencies]
 python = ">=3.12,<3.13"
-crewai = {extras = ["tools"], version = "^0.41.1"}
+[tool.poetry.dependencies]
+python = ">=3.12,<3.13"
+crewai = "^0.100.0"
+crewai_tools = ">=0.5.0"
+embedchain = ">=0.1.113,<0.2.0"
 python-dotenv = "^1.0.1"
 html2text = "^2024.2.26"
 sec-api = "^1.0.22"
 
 [tool.poetry.dependencies.naptha-sdk]
 git = "https://github.com/napthaAI/naptha-sdk.git"
-
-
-[tool.poetry.scripts]
-stock_analysis = "stock_analysis.main:run"
-train = "stock_analysis.main:train"
+branch = "crewai"
 
 [build-system]
 requires = ["poetry-core"]
