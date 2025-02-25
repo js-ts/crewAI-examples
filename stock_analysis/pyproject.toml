@@ -1,23 +1,25 @@
-[tool.poetry]
-name = "stock_analysis"
-version = "0.1.0"
-description = ""
-authors = ["Your Name <you@example.com>"]
-readme = "README.md"
-
-[tool.poetry.dependencies]
-python = ">=3.12,<3.13"
-crewai = "^0.100.0"
-crewai_tools = ">=0.5.0"
-embedchain = ">=0.1.113,<0.2.0"
-python-dotenv = "^1.0.1"
-html2text = "^2024.2.26"
-sec-api = "^1.0.22"
-
-[tool.poetry.dependencies.naptha-sdk]
-git = "https://github.com/napthaAI/naptha-sdk.git"
-branch = "crewai"
-
 [build-system]
 requires = ["poetry-core"]
 build-backend = "poetry.core.masonry.api"
+
+[tool.poetry]
+name = "financial_agent"
+version = "v0.1.0"
+description = ""
+authors = []
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = ">=3.10,<3.13"
+crewai = "^0.102.0"
+pydantic = "*"
+crewai_tools = "^0.36.0"
+sec_api = "*"
+embedchain = "^0.1.127"
+requests = "*"
+html2text = "*"
+python-dotenv = "*"
+
+[tool.poetry.dependencies.naptha-sdk]
+git = "https://github.com/NapthaAI/naptha-sdk.git"
+branch = "crewai"
