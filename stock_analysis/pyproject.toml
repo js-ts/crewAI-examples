@@ -22,4 +22,4 @@ python-dotenv = "*"
 
 [tool.poetry.dependencies.naptha-sdk]
 git = "https://github.com/NapthaAI/naptha-sdk.git"
-branch = "crewai"
+branch = "plugins"
