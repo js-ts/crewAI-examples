@@ -23,3 +23,6 @@ dependencies = [
 
 [tool.uv.sources]
 naptha-sdk = { git = "https://github.com/NapthaAI/naptha-sdk.git", branch = "plugins" }
+
+[tool.hatch.metadata]
+allow-direct-references = true
