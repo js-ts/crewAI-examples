@@ -1,25 +1,25 @@
 [build-system]
-requires = ["poetry-core"]
-build-backend = "poetry.core.masonry.api"
+requires = ["hatchling"]
+build-backend = "hatchling.build"
 
-[tool.poetry]
+[project]
 name = "stock_analysis"
 version = "0.1.0"
 description = ""
 authors = []
+requires-python = ">=3.10,<3.13"
 readme = "README.md"
+dependencies = [
+    "crewai>=0.102.0,<0.103",
+    "pydantic",
+    "crewai_tools>=0.36.0,<0.37",
+    "sec_api",
+    "embedchain>=0.1.127,<0.2",
+    "requests",
+    "html2text",
+    "python-dotenv",
+    "naptha-sdk",
+]
 
-[tool.poetry.dependencies]
-python = ">=3.10,<3.13"
-crewai = "^0.102.0"
-pydantic = "*"
-crewai_tools = "^0.36.0"
-sec_api = "*"
-embedchain = "^0.1.127"
-requests = "*"
-html2text = "*"
-python-dotenv = "*"
-
-[tool.poetry.dependencies.naptha-sdk]
-git = "https://github.com/NapthaAI/naptha-sdk.git"
-branch = "plugins"
+[tool.uv.sources]
+naptha-sdk = { git = "https://github.com/NapthaAI/naptha-sdk.git", branch = "plugins" }
